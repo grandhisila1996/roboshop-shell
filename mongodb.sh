@@ -23,6 +23,18 @@ else
    echo "you are root user"
  fi 
 
- cp mongo.repo /etc/yum.repos/ & >> $LOGFILE
+ cp mongo.repo /etc/yum.repos.d/mongo.repo & >> $LOGFILE
 
  VALIDATE $? "copied mongodb Repo"
+
+ dnf install mongodb-org -y
+
+ VALIDATE $? "installing mongodb"
+
+ systemctl enable mongodb
+
+ VALIDATE $? "enabling mongodb"
+
+ systemctl start mongodb
+
+ VALIDATE $? "starting mongodb"
