@@ -2,7 +2,7 @@
 
 ID=$(id -u)
 
-Timestamp=$(date +%F-%H-%M-$S)
+Timestamp=$(date +%F:-%H-%M-%S)
 LOGFILE="/tmp/$0_$TIMESTAMP.log"
 
 echo "script started executing at $TIMESTAMP" & >> $LOGFILE
@@ -27,14 +27,22 @@ else
 
  VALIDATE $? "copied mongodb Repo"
 
- dnf install mongodb-org -y
+ dnf install mongodb-org -y & >> $LOGFILE
 
  VALIDATE $? "installing mongodb"
 
- systemctl enable mongodb
+ systemctl enable mongodb & >> $LOGFILE
 
  VALIDATE $? "enabling mongodb"
 
- systemctl start mongodb
+ systemctl start mongodb & >> $LOGFILE
 
  VALIDATE $? "starting mongodb"
+
+ sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf & >> $LOGFILE
+
+  VALIDATE $? "Remote access to Mongodb"
+
+  systemctl restart mogod & >> $LOGFILE
+
+  VALIDATE $? "Restarting Mongod"
