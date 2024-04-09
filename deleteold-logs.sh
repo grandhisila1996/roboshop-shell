@@ -2,7 +2,7 @@
 
 Source_DIrectory=/tmp/old-logs
 
-if [ ! -d $Source_DIrectory]
+if [ ! -d $Source_DIrectory ]
 then 
     echo "Source directory : $Source_Directory is not exist"
 else
