@@ -10,7 +10,7 @@ else
 
 fi
 
-Files_To_Delete=$(find $Source_Directory -type f -mtime +14 -name "*.log")
+Files_To_Delete=$(find /tmp/old-logs -type f -mtime +14 -name "*.log")
 
 VALIDATE () {
     if [ $? -ne 0 ]
