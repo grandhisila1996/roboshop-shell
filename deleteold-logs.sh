@@ -5,6 +5,7 @@ Source_Directory="/tmp/old-logs"
 if [ ! -d $Source_Directory ]
 then 
     echo "Source directory : $Source_Directory is not exist"
+    exit 1
 else
     echo "Source directory : $Source_Directory is exist"    
 fi
