@@ -10,7 +10,7 @@ else
     echo "Source directory : $Source_Directory is exist"    
 fi
 
-FILES_TO_DELETE="find $Source_Directory -type f -mtime +14 -name "*.log""
+OLD-LOGS=$(find $Source_Directory -type f -mtime +14 -name "*.log")
 
 VALIDATE () {
     if [ $? -ne 0 ]
@@ -18,6 +18,6 @@ VALIDATE () {
        echo "*.log fiels not exist in $Source_Directory"
        exit 1
     else
-       echo "$Files_To_Delete"
+       echo "$OLD-LOGS"
     fi
 }
