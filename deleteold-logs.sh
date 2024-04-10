@@ -1,14 +1,12 @@
 #!/bin/bash
 
-Source_DIrectory=/tmp/old-logs
+Source_Directory="/tmp/old-logs"
 
-if [ ! -d $Source_DIrectory ]
+if [ ! -d $Source_Directory ]
 then 
     echo "Source directory : $Source_Directory is not exist"
 else
     echo "Source directory : $Source_Directory is exist"    
-
 fi
 
-Files_To_Delete=$(find /tmp/old-logs -type f -mtime +14 -name "*.log")
-
+Files_To_Delete=$(find $Source_Directory -type f -mtime +14 -name "*.log")
