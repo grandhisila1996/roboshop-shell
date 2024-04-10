@@ -9,4 +9,4 @@ else
     echo "Source directory : $Source_Directory is exist"    
 fi
 
-Files_To_Delete=$(find $Source_Directory -type f -mtime +14 -name ".log")
+find $Source_Directory -type f -mtime +14 -name "*.log"
