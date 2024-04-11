@@ -12,12 +12,9 @@ fi
 
 OLD-LOGS=$(find $Source_Directory -type f -mtime +14 -name "*.log")
 
-VALIDATE () {
-    if [ $? -ne 0 ]
-    then
-       echo "*.log fiels not exist in $Source_Directory"
-       exit 1
-    else
-       echo "$OLD-LOGS"
-    fi
-}
+
+while IFS= read -r line
+do 
+  echo "Deleting file : $line"
+  rm -rf $line
+done <<< $Files_To_Delete
