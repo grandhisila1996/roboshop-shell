@@ -15,6 +15,6 @@ OLD-LOGS=`$(find $Source_Directory -type f -mtime +14 -name "*.log")`
 while IFS= read -r line
 do 
   echo "Deleting file : $line"
-  rm -rf $line
+  rm -f $line
 done <<< $OLD-LOGS
 
