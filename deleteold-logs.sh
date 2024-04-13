@@ -12,11 +12,13 @@ fi
 
 OLD_LOGS=$(find "${Source_Directory}" -type f -mtime +14 -name "*.log")
 
-echo "$OLD_LOGS"
-while IFS= read -r line
+
+for LOGS in $OLD_LOGS
 do 
-  echo "Deleting file : $line"
-  rm -rf $line
-done <<< $OLD_LOGS
+
+echo “Deleting file : $LOGS”
+rm -rf $LOGS
+
+done
 
 
