@@ -22,3 +22,8 @@ rm -rf $LOGS
 done
 
 
+chdbchbd
+cnjifdbvjk
+dkvncev
+cdejfnvjien
+fe vcjin
