@@ -4,7 +4,7 @@ Process=$(ps -ef | grep logs.sh | head -n 1)
 
 PID=$(echo "$Process" | awk '{print $2f}')
 
-echo "Deletelogs.sh started-$PID" : `date +%F:-%H-%M-%S`
+echo "Deletelogs.sh started-$PID" : `date +"%Y-%m-%d:-%H-%M-%S"`
 
 Source_Directory="/tmp/old-logs"
 
@@ -28,4 +28,4 @@ rm -rf $LOGS
 
 done
 
-echo "Deletelogs.sh completed-$PID" : `date +%F:-%H-%M-%S`
+echo "Deletelogs.sh completed-$PID" : `date +"%Y-%m-%d:-%H-%M-%S"`
