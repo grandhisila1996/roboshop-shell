@@ -1,6 +1,13 @@
 #!/bin/bash
 
+Process=$("ps -ef | grep logs.sh | head -n 1")
+
+PID=$("echo "$Process" | awk '{print $2f}'")
+
+echo "Deletelogs.sh started-$PID" : `date "+%d%m%Y%H%M%S"`
+
 Source_Directory="/tmp/old-logs"
+
 
 if [ ! -d $Source_Directory ]
 then 
@@ -21,9 +28,4 @@ rm -rf $LOGS
 
 done
 
-
-chdbchbd
-cnjifdbvjk
-dkvncev
-cdejfnvjien
-fe vcjin
+echo "Deletelogs.sh completed-$PID" : `date "+%d%m%Y%H%M%S"`
