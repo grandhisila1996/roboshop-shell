@@ -43,6 +43,6 @@ else
 
   VALIDATE $? "Remote access to Mongodb"
 
-  systemctl restart mogod & >> $LOGFILE
+  systemctl restart mongod & >> $LOGFILE
 
   VALIDATE $? "Restarting Mongod"
