@@ -7,7 +7,7 @@ LOGFILE="/tmp/$0_$TIMESTAMP.log"
 exec &> $LOGFILE
 
 $Mongo_host=34.23.54.134
-echo "script started executing at $TIMESTAMP" & >> $LOGFILE
+echo "script started executing at $Timestamp" & >> $LOGFILE
 
 VALIDATE () {
     if [ $? -ne 0 ]
