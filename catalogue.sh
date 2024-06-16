@@ -6,7 +6,7 @@ Timestamp=$(date +%F:-%H-%M-%S)
 LOGFILE="/tmp/$0_$TIMESTAMP.log"
 
 $Mongo_host=34.23.54.134
-echo "script started executing at $TIMESTAMP" & >> $LOGFILE
+echo "script started executing at $Timestamp" & >> $LOGFILE
 
 VALIDATE () {
     if [ $? -ne 0 ]
@@ -29,7 +29,7 @@ dnf module disable nodejs -y >> $LOGFILE
 
 VALIDATE $? "Disabling current Nodejs" 
 
-dnf moduel enable nodejs:18 -y >> $LOGFILE
+dnf module enable nodejs:18 -y >> $LOGFILE
 
 VALIDATE $? "installing Nodejs:18" 
 
