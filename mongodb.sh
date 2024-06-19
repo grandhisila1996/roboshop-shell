@@ -17,11 +17,11 @@ VALIDATE () {
 }
 if [ $ID -ne 0 ]
 
-then 
+then
    echo "Error : Please run this script with root user"
-else 
+else
    echo "you are root user"
- fi 
+ fi
 
  cp mongo.repo /etc/yum.repos.d/mongo.repo & >> $LOGFILE
 

@@ -20,9 +20,9 @@ VALIDATE () {
 }
 if [ $ID -ne 0 ]
 
-then 
+then
    echo "Error : Please run this script with root user"
-else 
+else
    echo "you are root user"
  fi
 
@@ -54,6 +54,6 @@ VALIDATE $? "unzipping nginx"
 
 cp /home/contos/roboshop-shell/roboshop.conf /etc/nginx/default.d/roboshop.conf
 
-systemctl restart nginx 
+systemctl restart nginx
 
 VALIDATE $? "restarting nginx"
