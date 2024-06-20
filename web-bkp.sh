@@ -19,7 +19,7 @@ VALIDATE () {
     
 }
 
-if [ $ID -ne 0]
+if [ $ID -ne 0 ]
 then
     echo -e "Please run this script with root access"
 else
@@ -61,6 +61,3 @@ VALIDATE $? "copied roboshop reverse proxy config"
 systemctl restart nginx &>> $LOGFILE
 
 VALIDATE $? "restarting nginx"
-
-
-fgvdfbhwjd
